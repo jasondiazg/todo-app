@@ -1,0 +1,35 @@
+{
+  "name": "moodle",
+  "version": "1.0.0",
+  "description": "A dummy moodle example written in Vanilla JavaScript and Bootstrap.",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasondiazg/moodle.git"
+  },
+  "keywords": [
+    "moodle",
+    "javascript",
+    "vanilla",
+    "bootstrap"
+  ],
+  "author": "Jason Diaz G.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jasondiazg/moodle/issues"
+  },
+  "homepage": "https://github.com/jasondiazg/moodle#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "sweetalert2": "^9.17.1"
+  }
+}

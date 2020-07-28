@@ -1,7 +1,7 @@
 {
-  "name": "moodle",
+  "name": "todo-app",
   "version": "1.0.0",
-  "description": "A dummy moodle example written in Vanilla JavaScript and Bootstrap.",
+  "description": "A dummy todo-app example written in Vanilla JavaScript and Bootstrap.",
   "main": "index.js",
   "scripts": {
     "start": "lite-server",
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/jasondiazg/moodle.git"
   },
   "keywords": [
-    "moodle",
+    "todo-app",
     "javascript",
     "vanilla",
     "bootstrap"
@@ -20,9 +20,9 @@
   "author": "Jason Diaz G.",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jasondiazg/moodle/issues"
+    "url": "https://github.com/jasondiazg/todo-app/issues"
   },
-  "homepage": "https://github.com/jasondiazg/moodle#readme",
+  "homepage": "https://github.com/jasondiazg/todo-app#readme",
   "devDependencies": {
     "lite-server": "^2.5.4"
   },

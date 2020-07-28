@@ -17,4 +17,5 @@ A dummy app made with vanilla javascript app.
     - Create register method
     - Create logout method
 10. Create register and home views
-11. Connect views to controllers
+11. Add home and redirect controllers.
+12. Add onload attributes to validate session.

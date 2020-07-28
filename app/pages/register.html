@@ -9,7 +9,7 @@
     <link href="../../app/assets/styles/login.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
+<body onload="checkAuthenticated()">
     <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
         <div class="card card0 border-0">
             <div class="row d-flex">
@@ -55,8 +55,13 @@
                             <input class="mb-4" type="text" id="email"
                                 placeholder="Type your email">
                         </div>
-                        <div class="row mb-3 px-3">
-                            <button type="submit" class="btn btn-blue text-center" onclick="register()">Register</button>
+                        <div class="row">
+                            <div class="mb-3 px-3">
+                                <button type="submit" class="btn btn-blue text-center" onclick="register()">Register</button>
+                            </div>
+                            <div class="mb-3 px-3">
+                                <button type="submit" class="btn btn-blue text-center" onclick="goToBaseUrl()">Cancel</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -81,6 +86,7 @@
     <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
 
     <script src="../../app/constants/constants.js"></script>
+    <script src="../../app/controllers/redirect.controller.js"></script>
     <script src="../../app/services/login.service.js"></script>
 </body>
 

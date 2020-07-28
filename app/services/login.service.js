@@ -10,8 +10,14 @@ const deleteToken = () => {
     localStorage.removeItem(tokenName);
 }
 
-const goToRegister = () => {
-    window.location.href = registerUrl;
+const isAuthenticated = () => {
+    return getToken();
+}
+
+const checkAuthenticated = () => {
+    if (isAuthenticated()) {
+        goToHome();
+    }
 }
 
 const login = () => {
@@ -32,7 +38,7 @@ const login = () => {
                     title: response.message,
                     onClose: () => {
                         saveToken(response.data);
-                        window.location.href = homeUrl;
+                        goToHome();
                     }
                 });
             } else {
@@ -63,7 +69,7 @@ const logout = () => {
                     title: response.message,
                     onClose: () => {
                         deleteToken();
-                        window.location.href = baseUrl;
+                        goToBaseUrl();
                     }
                 });
             } else {
@@ -99,7 +105,7 @@ const register = () => {
                     icon: 'success',
                     title: response.message,
                     onClose: () => {
-                        window.location.href = baseUrl;
+                        goToBaseUrl();
                     }
                 });
             } else {

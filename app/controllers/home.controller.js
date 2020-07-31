@@ -3,3 +3,5 @@ const loadHome = () => {
         window.location.href = baseUrl;
     }
 }
+
+me();

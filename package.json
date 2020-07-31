@@ -1,5 +1,5 @@
 {
-  "name": "todo-app",
+  "name": "@jasondiazg/todo-app",
   "version": "1.0.0",
   "description": "A dummy todo-app example written in Vanilla JavaScript and Bootstrap.",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jasondiazg/moodle.git"
+    "url": "git+https://github.com/jasondiazg/todo-app.git"
   },
   "keywords": [
     "todo-app",

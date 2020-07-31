@@ -1,11 +1,13 @@
 // app constants
 const tokenName = "academikToken";
+const userName = "user";
 const baseEndpoint = "http://localhost:3001";
 const api = "/api";
 const loginEndpoint = baseEndpoint + api + "/login";
 const logoutEndpoint = baseEndpoint + api + "/logout";
 const userEndpoint = baseEndpoint + api + "/user";
 const registerEndpoint = baseEndpoint + api + "/register";
+const meEndpoint = baseEndpoint + api + "/me";
 
 const baseUrl = "http://localhost:3000";
 const homeUrl = baseUrl + "/app/pages/home.html";

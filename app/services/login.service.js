@@ -20,6 +20,18 @@ const checkAuthenticated = () => {
     }
 }
 
+const saveUser = (user) => {
+    localStorage.setItem(userName, JSON.stringify(user));
+}
+
+const getUser = () => {
+    return JSON.parse(localStorage.getItem(userName));
+}
+
+const deleteUser = () => {
+    localStorage.removeItem(userName);
+}
+
 const login = () => {
     fetch(loginEndpoint, {
         method: 'POST',
@@ -69,6 +81,7 @@ const logout = () => {
                     title: response.message,
                     onClose: () => {
                         deleteToken();
+                        deleteUser();
                         goToBaseUrl();
                     }
                 });
@@ -108,6 +121,31 @@ const register = () => {
                         goToBaseUrl();
                     }
                 });
+            } else {
+                toast.fire({
+                    icon: 'error',
+                    title: response.message
+                });
+            }
+        }).catch(() =>
+            toast.fire({
+                icon: 'error',
+                title: unavailableBackend
+            })
+        );
+}
+
+const me = () => {
+    fetch(meEndpoint, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${getToken()}`
+        }
+    }).then(response => response.json())
+        .then(response => {
+            if (!response.error) {
+                saveUser(response.data);
+                document.getElementById("username").innerText = response.data.name;
             } else {
                 toast.fire({
                     icon: 'error',

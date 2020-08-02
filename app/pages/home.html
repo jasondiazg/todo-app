@@ -11,9 +11,26 @@
 <body onload="loadHome()">
     <div class="container-fluid">
         <div class="jumbotron">
-            <button class="btn btn-danger float-right" onclick="logout()">Logout</button>
+            <button class="btn btn-danger float-right" onclick="logout()">
+                <i class="fa fa-sign-out"></i> Logout
+            </button>
             <h1>Welcome again <strong id="username"></strong>!</h1>
-            <h2>This is <strong>todo-app.</strong></h2>
+            <h4>You can manage your pending tasks in <strong>todo-app.</strong></h4>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary float-right" onclick="getAllTodos()">
+                    <i class="fa fa-refresh"></i> Refresh
+                </button>
+                <button class="btn btn-success float-right" onclick="openModal()">
+                    <i class="fa fa-plus"></i> New todo
+                </button>
+                <br /> <br />
+                <table class="table" id="table"></table>
+            </div>
         </div>
     </div>
 
@@ -23,6 +40,7 @@
     <script src="../../app/constants/constants.js"></script>
     <script src="../../app/controllers/redirect.controller.js"></script>
     <script src="../../app/services/login.service.js"></script>
+    <script src="../../app/services/todo.service.js"></script>
     <script src="../../app/controllers/home.controller.js"></script>
 </body>
 

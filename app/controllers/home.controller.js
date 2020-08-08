@@ -83,14 +83,24 @@ const getButton = (type, todo) => {
             break;
 
         case 'delete':
-            button.addEventListener("click", () => deleteTodo(todo));
+            button.addEventListener("click", () => warnAlert(todo, {
+                question: `Are you sure that you want to delete ${todo.description}?`,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
+                callback: (todo) => deleteTodo(todo)
+            }));
             button.className = 'btn btn-danger';
             icon.className = 'fa fa-trash';
             strong.innerText = ' Delete';
             break;
 
         default:
-            button.addEventListener("click", () => changeStateTodo(todo));
+            button.addEventListener("click", () => warnAlert(todo, {
+                question: `Are you sure that you want to change the status of ${todo.description}?`,
+                confirmButtonText: `Yes, change to ${todo.done ? 'pending' : 'done'}.`,
+                cancelButtonText: 'No, cancel!',
+                callback: (todo) => changeStateTodo(todo)
+            }));
             button.className = 'btn btn-warning';
             icon.className = todo.done ? 'fa fa-remove' : 'fa fa-check';
             strong.innerText = todo.done ? ' Pending' : ' Done';
@@ -116,6 +126,25 @@ const openModal = async (todo = { done: false }) => {
         }
     }
 }
+
+const warnAlert = (todo, options) => {
+    Swal.fire({
+        title: options.question,
+        icon: 'question',
+        confirmButtonText: options.confirmButtonText,
+        cancelButtonText: options.cancelButtonText,
+        showCancelButton: true,
+        showCloseButton: true,
+        confirmButtonColor: 'green',
+        cancelButtonColor: '#d33'
+    }).then(result => {
+        if (result.isConfirmed) {
+            options.callback(todo);
+        }
+    }).catch(error => {
+        console.error(error);
+    });
+};
 
 me();
 getAllTodos();
